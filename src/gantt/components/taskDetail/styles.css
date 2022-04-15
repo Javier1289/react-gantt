@@ -1,0 +1,51 @@
+.gant__task-detail{
+
+    position: fixed;    
+    border-radius: 10px;
+    width: 60%;
+    padding:10px;
+    z-index: 100;
+    top:10px;
+    left:20px;
+    background-color: #fff;    
+    -webkit-box-shadow: 2px 5px 15px -5px #000000; 
+    box-shadow: 2px 5px 15px -5px #000000;
+}
+
+.gant__task-detail--header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gant__task-detail__header--close-detail{
+    color:red;
+    font-size: 18px;
+    
+}
+
+.gant__task-detail__header--close-detail:hover{
+    cursor:pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.gant__task-detail--body{
+    overflow: auto;
+    position: relative;            
+    max-height: 70vh;
+}
+
+.gant__task-detail__body--key{
+    font-weight: 700;
+}
+
+.gant__task-detail__body--value{
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .gant__task-detail{       
+        width: 60%;    
+    }
+    
+}

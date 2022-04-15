@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Gantt } from './gantt/Gantt';
+import { arrayTasks } from './data/tasks';
+import { arrayResources } from './data/resources';
+import { GanttProvider } from './gantt/context/GanttProvider';
+import './index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {  
+  
+  	return (
+		<div className="App">
+			<header className="App-header" >
+				React Gantt
+				<hr/>  
+			</header>
+			<div>     
+				<GanttProvider >
+					<Gantt 
+					resources = { arrayResources() } 
+					tasks = { arrayTasks() } 
+					/>        
+				</GanttProvider>           
+			</div>
+		</div>
+  	);
+
 }
 
 export default App;

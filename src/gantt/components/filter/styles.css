@@ -1,0 +1,77 @@
+.gantt__filters{    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.gantt_filter--keys{
+    height: 28px;
+    border:none;
+    background-color: rgb(12, 126, 192);
+    color:#fff;
+    padding: 2px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.gantt_filter--keys:hover{
+    cursor:pointer;
+    background-color: rgb(15, 143, 218);
+    transition:0.3s ease;
+}
+
+.gantt_filter--keys:active{
+    background-color: rgb(49, 169, 238);    
+    transition:0.3s ease;
+}
+
+.gantt__filter--values{
+    height: 29px;
+}
+
+.gantt__config--button{
+    height: 28px;
+    border:none;
+    background-color: rgb(12, 126, 192);
+    color:#fff;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.gantt__config--button:hover{
+    cursor:pointer;
+    background-color: rgb(15, 143, 218);
+    transition:0.3s ease;
+}
+
+.gantt__config--button:active{
+    background-color: rgb(49, 169, 238);    
+    transition:0.3s ease;
+}
+
+@media only screen and (max-width: 768px) {
+    .gantt__filters{
+        flex-direction: column;
+    }
+
+    .gantt_filter div{
+        margin-bottom: 10px ;
+    }
+
+    .gantt_filter--keys{
+        width: 100%;            
+    }
+    .gantt__filter--values{
+        margin-top: 10px;
+        width: 100%;        
+    }
+
+    .gantt__config{
+        display: flex;
+        flex: 1;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    
+
+}
