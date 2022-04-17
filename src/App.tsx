@@ -14,12 +14,16 @@ const App = () => {
 				<hr/>  
 			</header>
 			<div>     
+				
 				<GanttProvider >
 					<Gantt 
-					resources = { arrayResources() } 
-					tasks = { arrayTasks() } 
+						resources = { arrayResources() } 
+						tasks = { arrayTasks() } 
+						tableInfo = { true }
+						filters = { true }
 					/>        
 				</GanttProvider>           
+				
 			</div>
 		</div>
   	);

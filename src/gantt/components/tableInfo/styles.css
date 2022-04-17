@@ -1,0 +1,158 @@
+.table__info{
+    margin-top: 20px;
+    font-size: 14px;
+    max-height: 300px;
+    overflow: overlay;
+    width: 100%;
+    
+}
+
+.table__info table{
+    width: 100%;    
+} 
+
+.table__info--filter{
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: end;
+}
+
+
+.table__info--header{
+    background-color: #4162a5;
+    color: #fff;
+    width: 100%;
+    
+}
+
+.table__info--header tr{
+    background-color: #4162a5;
+    color: #fff;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    
+}
+
+.table__info--header tr th {
+    font-weight: 600;
+    text-align: center;
+    border-left: 1px solid #fff;
+    flex: 1;
+}
+
+.table__info--header tr th.th__body {
+    flex: 2;
+}
+
+
+
+
+.table__info--body {
+    width: 100%;
+    border-top: 20px solid;
+}
+
+.table__info--body tr{
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.table__info--body tr.tr_pair{
+    background-color: rgb(200, 200, 200);
+}
+
+.table__info--body tr td {
+
+    font-weight: 400;
+    text-align: center;
+    border-left: 1px solid #fff;
+    flex: 1;
+
+}
+
+.table__info--body tr td.td__body{
+    flex: 2;
+}
+
+.span__responsive--field{
+    display: none;
+}
+
+
+
+.table__info::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background:transparent; 
+}
+
+.table__info::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.table__info::-webkit-scrollbar-button:increment,.table__info::-webkit-scrollbar-button {
+    display: none;
+    
+} 
+
+.table__info::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.table__info::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.table__info::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .table__info--header{
+        display:none;
+    }
+
+    .table__info--body {
+        border-top: none;
+    }
+
+    .table__info--body tr{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid #fff;
+    }
+
+    .table__info--body tr td {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #fff;
+        
+    }
+
+    .span__responsive--field{
+        display:flex;
+        background-color: #4162a5;
+        min-width: 100px;
+        color: #fff;
+        font-weight: 600;
+        padding-left: 5px;
+        align-items: center;
+    }
+
+    .span__responsive--value{
+        padding-right: 5px;
+    }
+    
+}
+

@@ -2,27 +2,27 @@ export const arrayResources = () => {
 
     return [
         {
-            "resourceId":"r1",
+            "resourceId":"John Doe",
             "name":"John",
             "lastName":"Doe",
         },
         {
-            "resourceId":"r2",
+            "resourceId":"Jane Doe",
             "name":"Jane",
             "lastName":"Doe",
         },
         {
-            "resourceId":"r3",
+            "resourceId":"Homer Simpson",
             "name":"Homer",
             "lastName":"Simpson",
         },
         {
-            "resourceId":"r4",
+            "resourceId":"Bart Simpson",
             "name":"Bart",
             "lastName":"Simpson",
         },
         {
-            "resourceId":"r5",
+            "resourceId":"Lisa Simpson",
             "name":"Lisa",
             "lastName":"Simpson",
         },

@@ -5,12 +5,6 @@ interface Props{
 	filterKeys: any[] 
 }
 
-interface Filter {
-	key:string | null ;
-	value:string | number | null ;
-}
-
-
 export const PanelFilterKey = ( { filterKeys }: Props ) => {
 
 	const { setKey, setValue } = useContext( TaskFilterContext );

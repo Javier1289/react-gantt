@@ -6,11 +6,14 @@ import { HeaderTitle } from './components/headerTitle/HeaderTitle';
 import { GanttContext } from './context/GanttContext';
 import { TaskFilterProvider } from './context/TaskFilterProvider';
 import { TaskDetail } from './components/taskDetail/TaskDetail';
+import { TableInfo } from './components/tableInfo/TableInfo';
 import './styles.css';
 
 interface Props{
     tasks: any[];
     resources:any[];
+    tableInfo:boolean;
+    filters:boolean;
 }
 
 
@@ -64,7 +67,7 @@ const createHashResourceTask = ( resources: any[], tasks:any[] ) => {
 
 
 
-export const Gantt = ( { resources, tasks }: Props ) => {
+export const Gantt = ( { resources, tasks, tableInfo = false, filters = false }: Props ) => {
     
     const {
         startTime,
@@ -79,10 +82,13 @@ export const Gantt = ( { resources, tasks }: Props ) => {
     return (
         <TaskFilterProvider>
             <div className="gantt">  
-                
-                <Filters 
-                    filterKeys = { bodiesKeys }
-                />
+                {( 
+                    filters && 
+                    <Filters 
+                        filterKeys = { bodiesKeys }
+                    />
+                    
+                )}
                 
                 <div className='gantt__body'>
 
@@ -134,6 +140,14 @@ export const Gantt = ( { resources, tasks }: Props ) => {
                 </div>
 
                 <TaskDetail />
+
+                {( 
+                    tableInfo && 
+                    
+                    <TableInfo  
+                        tasks = { tasks }
+                    />
+                )}
         
             </div>
         </TaskFilterProvider>

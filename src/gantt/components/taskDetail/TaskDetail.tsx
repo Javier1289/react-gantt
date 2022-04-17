@@ -63,7 +63,7 @@ export const TaskDetail = () => {
             style={{ ...style }}
         >
             <div className="gant__task-detail--header">
-                <h5 className="gant__task-detail__header--title">Task ID: 132456</h5>
+                <h5 className="gant__task-detail__header--title">Task ID: { taskDetail.task.taskId }</h5>
                 <span 
                     className='gant__task-detail__header--close-detail'
                     onClick={ handleClickCloseDetail }

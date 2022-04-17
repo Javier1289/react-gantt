@@ -1,5 +1,6 @@
 .gantt{
     margin: 5px;
+    position: relative;
 }
 
 .gantt__body{
