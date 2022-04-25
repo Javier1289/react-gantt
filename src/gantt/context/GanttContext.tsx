@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ITaskDetail } from '../interfaces';
+import { IConfigResources, IExpandedRow, IGanttConfig, IGanttPrivateConfig, ITaskDetail } from '../interfaces';
 
 export type GanttContextProps = {
     set_hours: ( date: string ) => void;
@@ -12,6 +12,13 @@ export type GanttContextProps = {
     unitTime: moment.unitOfTime.DurationConstructor;
     taskDetail: ITaskDetail;
     setTaskDetail: ( {}: ITaskDetail ) => void;
+    config:IGanttConfig;
+    setConfig: ( {}: IGanttConfig ) => void;
+    privateConfig: IGanttPrivateConfig;
+    setPrivateConfig: ( {}: IGanttPrivateConfig ) => void;
+    configResources: IConfigResources;
+    setConfigResources: ( {}: IConfigResources ) => void;
+
 } 
 
 

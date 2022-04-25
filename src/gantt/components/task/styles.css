@@ -4,6 +4,10 @@
     background-color: rgba(65, 120, 202, 0.5);
     /* width: 100px; */
     height: 20px;
+    /* border-top:3px solid rgb(231, 231, 231);
+    position: relative;
+    background-color: rgba(65, 120, 202, 0.5);
+    height: 20px; */
 }
 
 .gantt__task--element:hover{

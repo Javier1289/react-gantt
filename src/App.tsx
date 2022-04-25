@@ -1,8 +1,6 @@
-import { Gantt } from './gantt/Gantt';
+import Gantt from './gantt/Gantt';
 import { arrayTasks } from './data/tasks';
 import { arrayResources } from './data/resources';
-import { GanttProvider } from './gantt/context/GanttProvider';
-import './index.css';
 
 
 const App = () => {  
@@ -15,14 +13,12 @@ const App = () => {
 			</header>
 			<div>     
 				
-				<GanttProvider >
-					<Gantt 
-						resources = { arrayResources() } 
-						tasks = { arrayTasks() } 
-						tableInfo = { true }
-						filters = { true }
-					/>        
-				</GanttProvider>           
+				<Gantt 
+                    resources = { arrayResources() } 
+                    tasks = { arrayTasks() } 
+                    tableInfo = { true }
+                    filters = { true }
+                />          
 				
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { GanttContext } from '../../context/GanttContext';
 import { ITask } from '../../interfaces';
 import './styles.css';

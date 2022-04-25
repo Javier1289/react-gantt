@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { useState } from 'react';
 import { usePresets } from '../hooks/usePresets';
-import { ITaskDetail } from '../interfaces';
+import { ITaskDetail, IGanttConfig, IGanttPrivateConfig, IExpandedRow, IConfigResources } from '../interfaces';
 import { GanttContext } from './GanttContext';
 
 interface Props{
@@ -27,6 +27,17 @@ export const GanttProvider = ( { children }: Props ) => {
         range: 30
     })
 
+    const [ config,  setConfig ] = useState<IGanttConfig>({
+        tasks:[],
+        resources:[],
+        tableInfo:false,
+        filters:false,
+    })
+
+    const [ privateConfig, setPrivateConfig ] = useState<IGanttPrivateConfig>({
+        keys:[],
+        tasks:[]
+    })
 
     const [ taskDetail, setTaskDetail ] = useState<ITaskDetail>({
 		left:'0px',
@@ -40,6 +51,11 @@ export const GanttProvider = ( { children }: Props ) => {
 			body:{},
         }
 	});
+
+    const [ configResources, setConfigResources ] = useState<IConfigResources>({
+        resources:[]
+    })
+
     
     return <GanttContext.Provider value = {{
         set_hours,
@@ -52,6 +68,12 @@ export const GanttProvider = ( { children }: Props ) => {
         unitTime,
         taskDetail,
         setTaskDetail,
+        config,
+        setConfig,
+        privateConfig, 
+        setPrivateConfig,
+        configResources, 
+        setConfigResources
     }}>
         { children }
     </GanttContext.Provider>

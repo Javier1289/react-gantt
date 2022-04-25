@@ -1,14 +1,16 @@
 import { useCallback, useState, useContext } from 'react';
 import moment from 'moment';
-import { formatEndTime, formatFirstTime, widthHeaderRow } from '../../helpers';
+import { formatEndTime, formatFirstTime, getFilteredTasks, widthHeaderRow } from '../../helpers';
 import { Task } from '../task/Task';
 import { TaskFilterContext } from '../../context/TaskFilterContext';
 import { ITask } from '../../interfaces';
+import { GanttContext } from '../../context/GanttContext';
 
 interface Props{
     tasks: ITask[];
     units: any;
     unitTime: any;
+    resourceId:any;
 }
 
 const getTotalSeconds = ( init: any, end: any ) => {
@@ -80,33 +82,15 @@ const showTask = ( task:ITask, firstTimeUnits: any, lastTimeUnits:any ) => {
 }
 
 
-export const Row = ( { tasks, units, unitTime } : Props ) => {         
+export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {         
+
+    const { configResources } = useContext( GanttContext );
 
     const { filters } = useContext( TaskFilterContext );
 
     const { key, value } = filters;
 
-    const tasksFiltered = tasks.filter( task => {
-        
-        if( key && value ){
-            
-            if( task.body[ key ] ){
-                
-                return task.body[ key ].toLowerCase().includes( value.toString().toLowerCase() );                                            
-            
-            }else{
-
-                return false;
-
-            }
-
-        }else{
-
-            return true;
-        
-        }
-
-    }); 
+    const tasksFiltered = getFilteredTasks( tasks, key, value );
 
     const firstTimeUnits = formatFirstTime( units[0], unitTime );
     
@@ -127,18 +111,22 @@ export const Row = ( { tasks, units, unitTime } : Props ) => {
 
     }, [units]);
 
+    const expandedRow = configResources.resources.filter( res => res.resourceId === resourceId )[0];
+
     let indexTask = 0;
 
     return (
-        <div className="gantt__content__body--row" >
+        <div 
+            className="gantt__content__body--row"             
+        >
             <div 
                 ref={ taskContainer } 
-                className="gantt__task--container"            
+                className="gantt__task--container"        
             >                            
                 {
                     tasksFiltered.map( ( task: ITask, i: number ) => {   
                         
-                        const { taskId, startTime, endTime,color, body } = task;
+                        const { taskId, startTime, endTime, color, body } = task;
 
                         if( showTask( { taskId, startTime, endTime, body }, firstTimeUnits, lastTimeUnits  ) ){
                             
@@ -146,7 +134,8 @@ export const Row = ( { tasks, units, unitTime } : Props ) => {
                             
                             const widthTask = getDurationTask( startTime, endTime, firstTimeUnits, lastTimeUnits, width, totalTime, unitTime );                    
 
-                            const top = -23 * indexTask;
+                            // const top = -23 * indexTask;
+                            const top = ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ? indexTask : -23 * indexTask;
                             
                             indexTask++;
 
@@ -169,13 +158,16 @@ export const Row = ( { tasks, units, unitTime } : Props ) => {
                 <div 
                     className="gantt__content__body__row--unit" 
                     key = { i }
-                    style = {{ width: widthHeaderRow( unit, unitTime )}}
+                    style = {{ 
+                        width: widthHeaderRow( unit, unitTime ),
+                        height: ( ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ) ? ( tasks.length * 23 )+'px' : '23px' 
+                    }}
                 >
                     
                 </div> 
             ))
         }
-        </div> 
+        </div>
     )
 
 }

@@ -1,4 +1,5 @@
 import moment from "moment";
+import { ITask } from './interfaces';
 
 export const getUnitsTimeInRange = ( startTime: any, range: number, unitTime: moment.unitOfTime.DurationConstructor ) => {
         
@@ -229,4 +230,30 @@ export const widthHeaderRow = ( date: string, unitTime: moment.unitOfTime.Durati
             return '150px';
     }
 
+}
+
+
+export const getFilteredTasks = ( tasks:ITask[], key: string | null, value: string | number| null ) => {
+        
+    return tasks.filter( task => {
+        
+        if( key && value ){
+            
+            if( task.body[ key ] ){
+                
+                return task.body[ key ].toLowerCase().includes( value.toString().toLowerCase() );                                            
+            
+            }else{
+
+                return false;
+
+            }
+
+        }else{
+
+            return true;
+        
+        }
+
+    }); 
 }

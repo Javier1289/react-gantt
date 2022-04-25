@@ -22,13 +22,25 @@
 
 .gantt__resources__body--row{
     padding-left: 3px;
-    padding-right: 3px;
+    padding-right: 6px;
     text-align: center;
     /* border: 1px solid black; */
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     background-color: rgb(161, 161, 161);
-    
+    display: flex;
+}
+
+.gantt__resources__body__row--btn-expand{
+    cursor: pointer;
+    color:#4162a5;
+    font-weight: bold;
+}
+
+.gantt__resources__body__row__btn--title{
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.678);
+    font-weight: 600;
 }
 
 .gantt__content{
