@@ -16,7 +16,7 @@ interface Props{
 
 export const Task = ( { offset, width, top, color, task }: Props ) => {		
 
-	const { setTaskDetail } = useContext( GanttContext );
+	const { setTaskDetail, ganttHeightTask } = useContext( GanttContext );
 
 	const { taskId, startTime, endTime, body } = task;
 
@@ -43,7 +43,8 @@ export const Task = ( { offset, width, top, color, task }: Props ) => {
 				width,
 				top,
 				backgroundColor:color,
-				opacity:'0.8'
+				opacity:'0.8',
+				height: ganttHeightTask + 'px'
 			}}
 			onClick = { ( e ) => handleClick( e, task ) }
 		>

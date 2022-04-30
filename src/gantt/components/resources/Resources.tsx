@@ -3,15 +3,15 @@ import { GanttContext } from "../../context/GanttContext";
 import { heightHeaderRow } from "../../helpers"
 import { IExpandedRow, ITask } from "../../interfaces";
 
-const getHeightForRow = (  tasks:ITask[], expandedRow: IExpandedRow, resourceId: any ) => {
+const getHeightForRow = (  tasks:ITask[], expandedRow: IExpandedRow, resourceId: any, height: number ) => {
     
     if( expandedRow.expanded && expandedRow.resourceId === resourceId){
 
-        return  ( tasks ) ? ( tasks.length * 23 ) +'px':'23px';
+        return  ( tasks ) ? ( tasks.length * height ) +'px': height + 'px';
 
     }else{
 
-        return '23px';
+        return height + 'px';
 
     }
 
@@ -24,7 +24,8 @@ export const Resources = ( ) => {
         config,
         privateConfig,
         configResources, 
-        setConfigResources
+        setConfigResources,
+        ganttHeightRow
     } = useContext( GanttContext );
 
     const { tasks } = privateConfig;
@@ -64,7 +65,7 @@ export const Resources = ( ) => {
                                 className="gantt__resources__body--row" 
                                 key = { i }
                                 style = {{
-                                    height: getHeightForRow( tasks[ res.resourceId ], expandedRow, res.resourceId )
+                                    height: getHeightForRow( tasks[ res.resourceId ], expandedRow, res.resourceId, ganttHeightRow )
                                 }}
                             >
                                 <span

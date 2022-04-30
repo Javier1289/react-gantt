@@ -84,7 +84,7 @@ const showTask = ( task:ITask, firstTimeUnits: any, lastTimeUnits:any ) => {
 
 export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {         
 
-    const { configResources } = useContext( GanttContext );
+    const { configResources, ganttHeightRow } = useContext( GanttContext );
 
     const { filters } = useContext( TaskFilterContext );
 
@@ -135,7 +135,7 @@ export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {
                             const widthTask = getDurationTask( startTime, endTime, firstTimeUnits, lastTimeUnits, width, totalTime, unitTime );                    
 
                             // const top = -23 * indexTask;
-                            const top = ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ? indexTask : -23 * indexTask;
+                            const top = ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ? indexTask : ( ganttHeightRow * -1 ) * indexTask;
                             
                             indexTask++;
 
@@ -160,7 +160,7 @@ export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {
                     key = { i }
                     style = {{ 
                         width: widthHeaderRow( unit, unitTime ),
-                        height: ( ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ) ? ( tasks.length * 23 )+'px' : '23px' 
+                        height: ( ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ) ? ( tasks.length * ganttHeightRow )+'px' : ganttHeightRow +'px' 
                     }}
                 >
                     

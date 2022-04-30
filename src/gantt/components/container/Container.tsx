@@ -65,10 +65,14 @@ export const Container = ( { resources, tasks, tableInfo = false, filters = fals
         setConfig,
         setPrivateConfig,
         configResources, 
-        setConfigResources
+        setConfigResources,
+        set_desktop,
+        set_mobile
     } = useContext( GanttContext );
     
     const { bodiesKeys, hashMap } = createHashResourceTask( resources, tasks );
+
+    const handleResize = () => ( window.innerWidth > 768 ) ? set_desktop() : set_mobile();
 
     useEffect(() => {
       
@@ -93,6 +97,10 @@ export const Container = ( { resources, tasks, tableInfo = false, filters = fals
                 }
             })
         })
+
+        handleResize();
+      
+        window.addEventListener('resize', handleResize);
       
     }, [])
     

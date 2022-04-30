@@ -86,6 +86,24 @@ export const TableInfo = ( { tasks }: Props) => {
                                                         </td> 
                                                     )
     
+                                                }else if( field === 'color' ){
+                                                    
+                                                    return ( 
+                                                        <td  key = { task.taskId +'_'+i }>
+                                                            <span key = { 'span_'+task.taskId+'_'+i } className='span__responsive--field'>{ field }</span> 
+                                                            <span className='span__responsive--value'>
+                                                                <div style={{ 
+                                                                        backgroundColor: task[ field ],
+                                                                        width:'60px',
+                                                                        height:'25px',
+                                                                        borderRadius:'5px',    
+                                                                        display:'inline-block'                                                        
+                                                                    }}></div>
+                                                                { task[ field ] }
+                                                            </span>
+                                                        </td> 
+                                                    )
+    
                                                 }else{
                                                     
                                                     return ( 

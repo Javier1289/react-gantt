@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { usePresets } from '../hooks/usePresets';
 import { ITaskDetail, IGanttConfig, IGanttPrivateConfig, IExpandedRow, IConfigResources } from '../interfaces';
 import { GanttContext } from './GanttContext';
+import { useDimension } from '../hooks/useDimensions';
 
 interface Props{
     children: JSX.Element | JSX.Element[];
@@ -56,6 +57,16 @@ export const GanttProvider = ( { children }: Props ) => {
         resources:[]
     })
 
+
+    const {
+        set_desktop,
+        set_mobile,
+        ganttHeightRow,
+        ganttHeightTask
+    } = useDimension({
+        ganttHeightRow:23,
+        ganttHeightTask: 20
+    });
     
     return <GanttContext.Provider value = {{
         set_hours,
@@ -73,7 +84,11 @@ export const GanttProvider = ( { children }: Props ) => {
         privateConfig, 
         setPrivateConfig,
         configResources, 
-        setConfigResources
+        setConfigResources,
+        set_desktop,
+        set_mobile,
+        ganttHeightRow,
+        ganttHeightTask
     }}>
         { children }
     </GanttContext.Provider>

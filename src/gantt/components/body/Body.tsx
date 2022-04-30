@@ -38,7 +38,6 @@ export const Body = ( ) => {
                 }
                 </div>
                 <div className="gantt__content--body">
-                
                 {
                     config.resources.map( ( res, i ) => {                              
 

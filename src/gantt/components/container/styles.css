@@ -18,6 +18,7 @@
     font-weight: 500;
     padding-left: 3px;
     padding-right: 3px;
+    transition: 0.3s;
 }
 
 .gantt__resources__body--row{
@@ -29,6 +30,7 @@
     border-bottom: 1px solid #eee;
     background-color: rgb(161, 161, 161);
     display: flex;
+    transition: 0.3s;
 }
 
 .gantt__resources__body__row--btn-expand{
@@ -63,6 +65,7 @@
     background-color: #4162a5;
     color:#eee;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 .gantt__content__header--unit p{
@@ -74,12 +77,14 @@
     display:inline-flex;
     flex-direction: column;
     flex: 1;
+    /* transition: 0.3s; */
 }
 
 .gantt__content__body--row{
     display: flex;        
     position:relative;
     box-sizing: border-box;
+    /* transition: 0.3s; */
 }
 
 .gantt__content__body__row--unit{
@@ -91,12 +96,14 @@
     border-bottom: 1px solid #eee;
     border-top: 1px solid #eee;
     background-color: rgb(231, 231, 231);
+    /* transition: 0.3s; */
 }
 
 .gantt__task--container{
     position: absolute;
     width:100%;
     height: 27px;
+    transition: 0.3s;
 }
 
 

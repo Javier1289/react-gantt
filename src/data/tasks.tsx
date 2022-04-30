@@ -12,7 +12,7 @@ export const arrayTasks = () => {
 				"name": "Graiden Barrera",
 				"address": "289-6230 Proin Avenue",
 				"country": "New Zealand",
-				"text": "consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque",
+				"text": "consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque, consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan nequ consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan nequ",
 			}
 		},
 		{

@@ -1,6 +1,6 @@
 # React Gantt
 
-![Image text](./docs/assets/img.JPG)
+![Image text](./md/example.jpg)
 
 Este es un simple diagrama de Gantt hecho con React y TypeScript
 

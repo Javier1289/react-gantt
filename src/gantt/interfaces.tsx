@@ -10,6 +10,11 @@ export interface IGanttPrivateConfig{
     tasks:any[];
 }
 
+export interface IGanttHeightConfig{
+    rowHeight: number;
+    taskHeight: number;
+}
+
 export interface ITask{
     taskId: number;
     startTime?:   string | undefined;
@@ -34,4 +39,10 @@ export interface IConfigResources {
 export interface IExpandedRow{
     resourceId: any | null;
     expanded: boolean;
+}
+
+
+export interface IDimensionScreen{
+    ganttHeightRow: number;
+    ganttHeightTask: number;
 }

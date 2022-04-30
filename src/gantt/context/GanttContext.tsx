@@ -10,14 +10,23 @@ export type GanttContextProps = {
     startTime: string;
     range: number;
     unitTime: moment.unitOfTime.DurationConstructor;
+
     taskDetail: ITaskDetail;
     setTaskDetail: ( {}: ITaskDetail ) => void;
+    
     config:IGanttConfig;
     setConfig: ( {}: IGanttConfig ) => void;
+    
     privateConfig: IGanttPrivateConfig;
     setPrivateConfig: ( {}: IGanttPrivateConfig ) => void;
+    
     configResources: IConfigResources;
     setConfigResources: ( {}: IConfigResources ) => void;
+    
+    set_desktop:() => void;
+    set_mobile:() => void;
+    ganttHeightRow: number;
+    ganttHeightTask: number;
 
 } 
 
