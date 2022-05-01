@@ -25,8 +25,10 @@ export type GanttContextProps = {
     
     set_desktop:() => void;
     set_mobile:() => void;
+    set_zoom:( percent: number ) => void;
     ganttHeightRow: number;
     ganttHeightTask: number;
+    ganttWidthRow: number
 
 } 
 

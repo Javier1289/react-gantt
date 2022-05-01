@@ -45,4 +45,5 @@ export interface IExpandedRow{
 export interface IDimensionScreen{
     ganttHeightRow: number;
     ganttHeightTask: number;
+    ganttWidthRow: number;
 }

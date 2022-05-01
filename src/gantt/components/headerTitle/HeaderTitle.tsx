@@ -1,5 +1,7 @@
 import moment from "moment";
 import { getFirstDayOfWeek, getLastDayOfWeek, heightHeaderRow, widthHeaderRow } from '../../helpers';
+import { useContext } from 'react';
+import { GanttContext } from '../../context/GanttContext';
 
 interface IHeaderTitle{
     unit: any;
@@ -8,6 +10,8 @@ interface IHeaderTitle{
 
 export const HeaderTitle = ({ unit, unitTime }: IHeaderTitle ) => {
     
+    const { ganttWidthRow } = useContext( GanttContext );
+
     const nDate = moment( unit );    
 
     const Y = nDate.format('YYYY');
@@ -17,7 +21,7 @@ export const HeaderTitle = ({ unit, unitTime }: IHeaderTitle ) => {
 
     const style = {
         height: heightHeaderRow( unitTime ),
-        width: widthHeaderRow(nDate.format('YYYY-MM-DD HH:mm:ss'), unitTime )
+        width: widthHeaderRow(nDate.format('YYYY-MM-DD HH:mm:ss'), unitTime, ganttWidthRow )
     }
 
     switch( unitTime ){

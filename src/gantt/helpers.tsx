@@ -188,9 +188,11 @@ export const heightHeaderRow = ( unitTime: moment.unitOfTime.DurationConstructor
 
 }
 
-export const widthHeaderRow = ( date: string, unitTime: moment.unitOfTime.DurationConstructor ) => {
+export const widthHeaderRow = ( date: string, unitTime: moment.unitOfTime.DurationConstructor, percent: number ) => {
     
     const nDate = moment( date );
+
+    const pixelDefault = 150;
 
     let unitDayPixel = 5;
 
@@ -198,19 +200,19 @@ export const widthHeaderRow = ( date: string, unitTime: moment.unitOfTime.Durati
 
     switch( unitTime ){
         case 'hours':
-            return '150px';
+            return ( pixelDefault * percent ) + 'px';
 
         case 'days':
-            return '150px';
+            return ( pixelDefault * percent ) + 'px';
 
         case 'weeks':
-            return '150px';
+            return ( pixelDefault * percent ) + 'px';
             
         case 'months':
 
             const lastDayMonth = getLastDayMonth( date );            
         
-            width = parseInt( lastDayMonth ) * unitDayPixel;
+            width = parseInt( lastDayMonth ) * ( unitDayPixel * percent );
 
             return width+'px';
             
@@ -222,12 +224,12 @@ export const widthHeaderRow = ( date: string, unitTime: moment.unitOfTime.Durati
             
             let days = 337+parseInt(leapYear);
             
-            width = days * unitDayPixel;
+            width = days * ( unitDayPixel * percent );
             
-            return ( days+parseInt(leapYear) )+'px';
+            return ( ( days + parseInt( leapYear ) ) * percent ) + 'px';
         
         default:
-            return '150px';
+            return ( pixelDefault * percent ) + 'px';
     }
 
 }

@@ -61,11 +61,14 @@ export const GanttProvider = ( { children }: Props ) => {
     const {
         set_desktop,
         set_mobile,
+        set_zoom,
         ganttHeightRow,
-        ganttHeightTask
+        ganttHeightTask,
+        ganttWidthRow
     } = useDimension({
         ganttHeightRow:23,
-        ganttHeightTask: 20
+        ganttHeightTask: 20,
+        ganttWidthRow: 1
     });
     
     return <GanttContext.Provider value = {{
@@ -87,8 +90,10 @@ export const GanttProvider = ( { children }: Props ) => {
         setConfigResources,
         set_desktop,
         set_mobile,
+        set_zoom,
         ganttHeightRow,
-        ganttHeightTask
+        ganttHeightTask,
+        ganttWidthRow,
     }}>
         { children }
     </GanttContext.Provider>

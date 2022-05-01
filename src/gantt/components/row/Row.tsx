@@ -84,7 +84,7 @@ const showTask = ( task:ITask, firstTimeUnits: any, lastTimeUnits:any ) => {
 
 export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {         
 
-    const { configResources, ganttHeightRow } = useContext( GanttContext );
+    const { configResources, ganttHeightRow, ganttWidthRow } = useContext( GanttContext );
 
     const { filters } = useContext( TaskFilterContext );
 
@@ -159,7 +159,7 @@ export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {
                     className="gantt__content__body__row--unit" 
                     key = { i }
                     style = {{ 
-                        width: widthHeaderRow( unit, unitTime ),
+                        width: widthHeaderRow( unit, unitTime, ganttWidthRow ),
                         height: ( ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ) ? ( tasks.length * ganttHeightRow )+'px' : ganttHeightRow +'px' 
                     }}
                 >
