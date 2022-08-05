@@ -12,14 +12,14 @@ export const arrayResources = () => {
             lastName:"Doe",
         },
         {
-            resourceId:"Homer Simpson",
-            name:"Homer",
-            lastName:"Simpson",
+            resourceId:"Mark Bowen",
+            name:"Mark",
+            lastName:"Bowen",
         },
         {
-            resourceId:"Bart Simpson",
-            name:"Bart",
-            lastName:"Simpson",
+            resourceId:"Gisela Finley",
+            name:"Gisela",
+            lastName:"Finley",
         },
         {
             resourceId:"Lisa Simpson",

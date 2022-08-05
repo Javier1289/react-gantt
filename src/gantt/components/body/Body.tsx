@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { GanttContext } from "../../context/GanttContext";
 import { getUnitsTimeInRange } from "../../helpers";
 import { HeaderTitle } from "../headerTitle/HeaderTitle";
@@ -20,6 +20,23 @@ export const Body = ( ) => {
 
     const units = getUnitsTimeInRange(startTime, range , unitTime );    
 
+    const ref = useRef( null );
+
+    useEffect(() => {
+        
+        const a: any = ref.current;
+
+        if( a ){
+            a.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'center'
+              });
+        }
+
+    }, [ units ])
+    
+
     return (
         <div className='gantt__body'>
 
@@ -33,6 +50,7 @@ export const Body = ( ) => {
                                     key = { i } 
                                     unit = { unit } 
                                     unitTime = { unitTime }
+                                    center = { ref }
                                 /> 
                     ))
                 }

@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { GanttContext } from "../../context/GanttContext";
 import { heightHeaderRow } from "../../helpers"
 import { IExpandedRow, ITask } from "../../interfaces";
@@ -72,7 +74,11 @@ export const Resources = ( ) => {
                                     className="gantt__resources__body__row--btn-expand" 
                                     onClick = { ( e ) => handleClick( res.resourceId ) }
                                 >
-                                    { ( expandedRow.expanded && expandedRow.resourceId === res.resourceId ) ? '-' : '+' }
+                                    { 
+                                        ( expandedRow.expanded && expandedRow.resourceId === res.resourceId ) 
+                                            ? <FontAwesomeIcon icon={faChevronCircleUp} /> 
+                                            : <FontAwesomeIcon icon={faChevronCircleDown} />
+                                    }
                                     <span
                                         className="gantt__resources__body__row__btn--title" 
                                     >

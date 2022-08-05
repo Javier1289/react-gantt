@@ -1,0 +1,17 @@
+.gantt__zoom--input:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .gantt__zoom{
+        margin-top:10px;
+        margin-bottom: 5px;
+    }
+
+    .gantt__zoom--input{
+        margin-right: 5px;
+    }
+
+
+}

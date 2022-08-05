@@ -17,3 +17,10 @@
     opacity: '1';
     transition: 0.3s;
 }
+
+.gantt__task--element:active{
+    cursor: pointer;
+    /* background-color: rgba(65, 120, 202, 0.863); */
+    opacity: '1';
+    transition: 0.3s;
+}

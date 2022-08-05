@@ -1,7 +1,7 @@
 import { PanelButtons } from "../panelButtons/PanelButtons"
 import { PanelFilterKey } from '../panelFilterKey/PanelFilterKey';
-import './styles.css';
 import { Zoom } from '../zoom/Zoom';
+import './styles.css';
 
 interface Props{
   filterKeys: any[] 

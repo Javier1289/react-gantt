@@ -133,8 +133,7 @@ export const Row = ( { tasks, units, unitTime, resourceId } : Props ) => {
                             const offset = getOffsetWidth( startTime , firstTimeUnits, width, totalTime, unitTime );                    
                             
                             const widthTask = getDurationTask( startTime, endTime, firstTimeUnits, lastTimeUnits, width, totalTime, unitTime );                    
-
-                            // const top = -23 * indexTask;
+                        
                             const top = ( expandedRow.expanded && expandedRow.resourceId === resourceId ) ? indexTask : ( ganttHeightRow * -1 ) * indexTask;
                             
                             indexTask++;
